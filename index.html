@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vCompany PMDP & MDPO NBT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #3b82f6;
+            --secondary: #0284c7;
+            --accent: #f59e0b;
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: #334155;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 50px;
+        }
+
+        /* Header / Hero */
+        header {
+            background: linear-gradient(135deg, #1e1b4b, #1e3a8a, #0284c7);
+            padding: 60px 20px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #cbd5e1;
+            max-width: 700px;
+            margin: 0 auto 25px auto;
+        }
+
+        /* Navigation Buttons */
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-light);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #2563eb;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(59, 130, 246, 0.4);
+        }
+
+        .btn-discord {
+            background-color: #5865F2;
+            color: white;
+        }
+
+        .btn-discord:hover {
+            background-color: #4752C4;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(88, 101, 242, 0.4);
+        }
+
+        .btn-roblox {
+            background-color: #00A2FF;
+            color: white;
+        }
+
+        .btn-roblox:hover {
+            background-color: #0082CC;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(0, 162, 255, 0.4);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Info Sections (Multilingual Box) */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .info-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .info-card h3 {
+            color: var(--accent);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 8px;
+        }
+
+        .info-card ul {
+            list-style-type: none;
+            margin: 15px 0;
+        }
+
+        .info-card ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: #cbd5e1;
+        }
+
+        .info-card ul li::before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            color: var(--primary-light);
+        }
+
+        .note {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        /* Fleet Section */
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin: 50px 0 30px 0;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--primary-light);
+            margin: 10px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        .category-title {
+            font-size: 1.6rem;
+            color: var(--secondary);
+            margin: 30px 0 20px 0;
+            padding-left: 12px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .fleet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .vehicle-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .vehicle-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-light);
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.2);
+        }
+
+        .vehicle-img-wrapper {
+            width: 100%;
+            height: 180px;
+            background-color: #0f172a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .vehicle-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .vehicle-card:hover .vehicle-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .vehicle-info {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .vehicle-info h4 {
+            font-size: 1.1rem;
+            color: var(--text-main);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 60px;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        footer strong {
+            color: var(--text-main);
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>PMDP & MDPO NBT</h1>
+        <p>Vítejte na oficiální stránce vCompany! Nabízíme reálná vozidla, skvělou komunitu a pravidelné směny.</p>
+        
+        <div class="nav-buttons">
+            <a href="#about" class="btn btn-primary">O nás / Info</a>
+            <a href="#fleet" class="btn btn-primary">Vozový park</a>
+            <a href="https://discord.gg/222PrSwPXu" target="_blank" class="btn btn-discord">Discord Server</a>
+            <a href="https://www.roblox.com/share?code=aa45d86e6349fd4aa4aa204730573b05&type=Server" target="_blank" class="btn btn-roblox">Private Server</a>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- Info / About Section -->
+        <h2 id="about" class="section-title">Informace / About Us</h2>
+        
+        <div class="info-grid">
+            <!-- Czech -->
+            <div class="info-card">
+                <h3>🇨🇿 Česky</h3>
+                <p>Ahoj, zajímáte se o Nids buses & trams?</p>
+                <p>Chcete být součástí PMDP & MDPO NBT?</p>
+                <br>
+                <p><strong>Připojte se do našeho týmu!</strong></p>
+                <p>Nabízíme:</p>
+                <ul>
+                    <li>Dobré směny</li>
+                    <li>CZ/SK a EN komunitu</li>
+                    <li>Reálné vozy s linkami</li>
+                </ul>
+                <p><strong>Co budete potřebovat:</strong></p>
+                <ol style="margin-left: 20px; color: #cbd5e1; margin-bottom: 15px;">
+                    <li>Připojit se na náš server</li>
+                    <li>Vytvořit si ticket, kde dostanete odkaz na applications</li>
+                </ol>
+                <a href="https://discord.gg/222PrSwPXu" target="_blank" class="btn btn-discord" style="padding: 8px 18px; font-size: 0.9rem;">Připojit se na Server</a>
+                <p class="note">Poznámka: Odkaz nikdy nevyprší</p>
+            </div>
+
+            <!-- Slovak -->
+            <div class="info-card">
+                <h3>🇸🇰 Slovensky</h3>
+                <p>Ahoj, zaujímajú ťa Nids autobusy a električky?</p>
+                <p>Chceš byť súčasťou PMDP & MDPO NBT?</p>
+                <br>
+                <p><strong>Pridaj sa do nášho tímu!</strong></p>
+                <p>Ponúkame:</p>
+                <ul>
+                    <li>Dobrú prácu na smeny</li>
+                    <li>CZ/SK a EN komunitu</li>
+                    <li>Reálne vozidlá s linkami</li>
+                </ul>
+                <p><strong>Čo budeš potrebovať:</strong></p>
+                <ol style="margin-left: 20px; color: #cbd5e1; margin-bottom: 15px;">
+                    <li>Pripojiť sa na náš server</li>
+                    <li>Vytvoriť ticket, kde dostaneš odkaz na aplikácie</li>
+                </ol>
+                <a href="https://discord.gg/222PrSwPXu" target="_blank" class="btn btn-discord" style="padding: 8px 18px; font-size: 0.9rem;">Pripojiť sa na Server</a>
+                <p class="note">Poznámka: Odkaz nikdy nevyprší</p>
+            </div>
+
+            <!-- English -->
+            <div class="info-card">
+                <h3>🇬🇧 English</h3>
+                <p>Hi, are you interested in Nids buses and trams?</p>
+                <p>Do you want to be part of PMDP & MDPO NBT?</p>
+                <br>
+                <p><strong>Join our team!</strong></p>
+                <p>We offer:</p>
+                <ul>
+                    <li>Good work for shifts</li>
+                    <li>CZ/SK and EN community</li>
+                    <li>Real vehicles with routes</li>
+                </ul>
+                <p><strong>What you will need:</strong></p>
+                <ol style="margin-left: 20px; color: #cbd5e1; margin-bottom: 15px;">
+                    <li>Join our server</li>
+                    <li>Create a ticket, where you will receive a link to the applications</li>
+                </ol>
+                <a href="https://discord.gg/222PrSwPXu" target="_blank" class="btn btn-discord" style="padding: 8px 18px; font-size: 0.9rem;">Join Server</a>
+                <p class="note">Note: The link never expires</p>
+            </div>
+        </div>
+
+        <!-- Fleet Section -->
+        <h2 id="fleet" class="section-title">Vozový Park</h2>
+
+        <!-- PMDP -->
+        <h3 class="category-title">PMDP</h3>
+        <div class="fleet-grid">
+            <div class="vehicle-card">
+                <div class="vehicle-img-wrapper"><img src="IMG_4570.jpeg" alt="14tr"></div>
+                <div class="vehicle-info"><h4>14tr</h4></div>
+            </div>
+            <div class="vehicle-card">
+                <div class="vehicle-img-wrapper"><img src="IMG_4571.jpeg" alt="15tr"></div>
+                <div class="vehicle-info"><h4>15tr</h4></div>
+            </div>
+            <div class="vehicle-card">
+                <div class="vehicle-img-wrapper"><img src="IMG_4572.jpeg" alt="Urbino 12 IV"></div>
+                <div class="vehicle-info"><h4>Urbino 12 IV</h4></div>
+            </div>
+            <div class="vehicle-card">
+                <div class="vehicle-img-wrapper"><img src="IMG_4573.jpeg" alt="Trollino 24 IV"></div>
+                <div class="vehicle-info"><h4>Trollino 24 IV</h4></div>
+            </div>
+            <div class="vehicle-card">
+                <div class="vehicle-img-wrapper"><img src="IMG_4574.jpeg" alt="Trollino 18 III"></div>
+                <div class="vehicle-info"><h4>Trollino 18 III</h4></div>
+            </div>
+            <div class="vehicle-card">
+                <div class="vehicle-img-wrapper"><img src="IMG_4576.jpeg" alt="Trollino 18 IV"></div>
+                <div class="vehicle-info"><h4>Trollino 18 IV</h4></div>
+            </div>
+            <div class="vehicle-card">
+                <div class="vehicle-img-wrapper"><img src="IMG_4577.jpeg" alt="Urbino 12 III"></div>
+                <div class="vehicle-info"><h4>Urbino 12 III</h4></div>
+            </div>
+            <div class="vehicle-card">
+                <div class="vehicle-img-wrapper"><img src="IMG_4579.jpeg" alt="SOR BN12"></div>
+                <div class="vehicle-info"><h4>SOR BN12</h4></div>
+            </div>
+            <div class="vehicle-card">
+                <div class="vehicle-img-wrapper"><img src="IMG_4580.jpeg" alt="Karosa B951E"></div>
+                <div class="vehicle-info"><h4>Karosa B951E</h4></div>
+            </div>
+            <div class="vehicle-card">
+                <div class="vehicle-img-wrapper"><img src="IMG_4581.jpeg" alt="Škoda 40T"></div>
+                <div class="vehicle-info"><h4>Škoda 40T</h4></div>
+            </div>
+            <div class="vehicle-card">
+                <div class="vehicle-img-wrapper"><img src="IMG_4582.jpeg" alt="Škoda 19T"></div>
+                <div class="vehicle-info"><h4>Škoda 19T</h4></div>
+            </div>
+            <div class="vehicle-card">
+                <div class="vehicle-img-wrapper"><img src="2881-posledne-tyzdne-v-premavke.jpeg" alt="Ikarus 280"></div>
+                <div class="vehicle-info"><h4>Ikarus 280</h4></div>
+            </div>
+            <div class="vehicle-card">
+                <div class="vehicle-img-wrapper"><img src="9c28e57c7150b6d654ff30d1023403b5.jpeg" alt="Tatra T3"></div>
+                <div class="vehicle-info"><h4>Tatra T3</h4></div>
+            </div>
+        </div>
+
+        <!-- MDPO -->
+        <h3 class="category-title">MDPO</h3>
+        <div class="fleet-grid">
+            <div class="vehicle-card">
+                <div class="vehicle-img-wrapper"><img src="IMG_4583.jpeg" alt="14tr"></div>
+                <div class="vehicle-info"><h4>14tr</h4></div>
+            </div>
+            <div class="vehicle-card">
+                <div class="vehicle-img-wrapper"><img src="IMG_4584.jpeg" alt="Trollino 15 II"></div>
+                <div class="vehicle-info"><h4>Trollino 15 II</h4></div>
+            </div>
+            <div class="vehicle-card">
+                <div class="vehicle-img-wrapper"><img src="IMG_4585.jpeg" alt="9tr ( ZIU9 )"></div>
+                <div class="vehicle-info"><h4>9tr ( ZIU9 )</h4></div>
+            </div>
+            <div class="vehicle-card">
+                <div class="vehicle-img-wrapper"><img src="IMG_4586.jpeg" alt="Urbino 12 III"></div>
+                <div class="vehicle-info"><h4>Urbino 12 III</h4></div>
+            </div>
+            <div class="vehicle-card">
+                <div class="vehicle-img-wrapper"><img src="IMG_4587.jpeg" alt="Urbino 15 II"></div>
+                <div class="vehicle-info"><h4>Urbino 15 II (převzaty z DP Ostrava)</h4></div>
+            </div>
+            <div class="vehicle-card">
+                <div class="vehicle-img-wrapper"><img src="IMG_4588.jpeg" alt="Karosa"></div>
+                <div class="vehicle-info"><h4>Karosa</h4></div>
+            </div>
+        </div>
+
+        <!-- Autoškola -->
+        <h3 class="category-title">Autoškola</h3>
+        <div class="fleet-grid">
+            <div class="vehicle-card">
+                <div class="vehicle-img-wrapper"><img src="2881-posledne-tyzdne-v-premavke.jpeg" alt="Ikarus 280"></div>
+                <div class="vehicle-info"><h4>Ikarus 280</h4></div>
+            </div>
+            <div class="vehicle-card">
+                <div class="vehicle-img-wrapper"><img src="9c28e57c7150b6d654ff30d1023403b5.jpeg" alt="Tatra T3"></div>
+                <div class="vehicle-info"><h4>Tatra T3</h4></div>
+            </div>
+            <div class="vehicle-card">
+                <div class="vehicle-img-wrapper"><img src="IMG_4583.jpeg" alt="Škoda 14tr"></div>
+                <div class="vehicle-info"><h4>Škoda 14tr</h4></div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>Created by: <strong>sotouszopavy</strong></p>
+        <p>&copy; vCompany PMDP & MDPO NBT</p>
+    </footer>
+
+</body>
+</html>
