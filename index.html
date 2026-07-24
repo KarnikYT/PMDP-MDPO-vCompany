@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>vCompany PMDP & MDPO NBT - Domov</title>
+    <title>vCompany PMDP & MDPO NBT - O nás</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -32,6 +32,7 @@
             padding-bottom: 50px;
         }
 
+        /* Header / Hero */
         header {
             background: linear-gradient(135deg, #1e1b4b, #1e3a8a, #0284c7);
             padding: 60px 20px;
@@ -55,26 +56,29 @@
             margin: 0 auto 25px auto;
         }
 
+        /* Hlavní navigace nahoře */
         .nav-buttons {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 20px;
             flex-wrap: wrap;
-            margin-top: 20px;
+            margin-top: 25px;
         }
 
         .btn {
             display: inline-block;
-            padding: 12px 28px;
+            padding: 14px 32px;
             border-radius: 30px;
             text-decoration: none;
             font-weight: 600;
+            font-size: 1.05rem;
             transition: all 0.3s ease;
             box-shadow: 0 4px 12px rgba(0,0,0,0.2);
             cursor: pointer;
             border: none;
         }
 
+        /* Tlačítko Vozový Park */
         .btn-fleet {
             background-color: var(--accent);
             color: #0f172a;
@@ -86,28 +90,19 @@
             box-shadow: 0 6px 18px rgba(245, 158, 11, 0.4);
         }
 
-        .btn-discord {
-            background-color: #5865F2;
+        /* Tlačítko Odkazy */
+        .btn-links {
+            background-color: var(--primary-light);
             color: white;
         }
 
-        .btn-discord:hover {
-            background-color: #4752C4;
+        .btn-links:hover {
+            background-color: #2563eb;
             transform: translateY(-3px);
-            box-shadow: 0 6px 18px rgba(88, 101, 242, 0.4);
+            box-shadow: 0 6px 18px rgba(59, 130, 246, 0.4);
         }
 
-        .btn-roblox {
-            background-color: #00A2FF;
-            color: white;
-        }
-
-        .btn-roblox:hover {
-            background-color: #0082CC;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 18px rgba(0, 162, 255, 0.4);
-        }
-
+        /* Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -117,7 +112,7 @@
         .section-title {
             text-align: center;
             font-size: 2.2rem;
-            margin: 30px 0 30px 0;
+            margin: 20px 0 30px 0;
             color: var(--text-main);
             position: relative;
         }
@@ -132,6 +127,7 @@
             border-radius: 2px;
         }
 
+        /* Sekce Karet */
         .info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -160,54 +156,22 @@
             padding-bottom: 8px;
         }
 
-        .info-card ul {
-            list-style-type: none;
-            margin: 15px 0;
+        .info-block {
+            margin-bottom: 20px;
         }
 
-        .info-card ul li {
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 8px;
-            color: #cbd5e1;
-        }
-
-        .info-card ul li::before {
-            content: "✔";
-            position: absolute;
-            left: 0;
+        .info-block h4 {
             color: var(--primary-light);
-        }
-
-        .note {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-top: 10px;
-            font-style: italic;
-        }
-
-        .fleet-cta {
-            background: linear-gradient(135deg, var(--bg-card), #1e1b4b);
-            border: 1px solid var(--primary-light);
-            border-radius: 20px;
-            padding: 40px 20px;
-            text-align: center;
-            margin: 40px 0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-        }
-
-        .fleet-cta h2 {
-            font-size: 2rem;
-            margin-bottom: 15px;
-            color: var(--text-main);
-        }
-
-        .fleet-cta p {
-            color: var(--text-muted);
-            margin-bottom: 25px;
             font-size: 1.1rem;
+            margin-bottom: 6px;
         }
 
+        .info-block p {
+            color: #cbd5e1;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
         footer {
             text-align: center;
             padding: 30px;
@@ -225,91 +189,83 @@
 <body>
 
     <header>
-        <h1>PMDP & MDPO NBT</h1>
-        <p>Vítejte na oficiální stránce vCompany! Nabízíme reálná vozidla, skvělou komunitu a pravidelné směny.</p>
+        <h1>vCompany PMDP & MDPO NBT</h1>
+        <p>Oficiální webová stránka naší vCompany v Nids buses & trams.</p>
         
+        <!-- Tlačítka nahoře -->
         <div class="nav-buttons">
-            <a href="vozovy-park.html" class="btn btn-fleet">🚌 Zobrazit Vozový Park</a>
-    <a href="odkazy.html" class="btn btn-primary">🔗 Odkazy (Discord & Roblox)</a>
-
- </div>
-    
+            <a href="vozovy-park.html" class="btn btn-fleet">🚌 Vozový Park</a>
+            <a href="odkazy.html" class="btn btn-links">🔗 Odkazy</a>
+        </div>
     </header>
 
     <div class="container">
 
-        <h2 class="section-title">O nás / Informace</h2>
+        <h2 class="section-title">O nás / About Us</h2>
         
         <div class="info-grid">
+            
+            <!-- Česky -->
             <div class="info-card">
                 <h3>🇨🇿 Česky</h3>
-                <p>Ahoj, zajímáte se o Nids buses & trams?</p>
-                <p>Chcete být součástí PMDP & MDPO NBT?</p>
-                <br>
-                <p><strong>Připojte se do našeho týmu!</strong></p>
-                <p>Nabízíme:</p>
-                <ul>
-                    <li>Dobré směny</li>
-                    <li>CZ/SK a EN komunitu</li>
-                    <li>Reálné vozy s linkami</li>
-                </ul>
-                <p><strong>Co budete potřebovat:</strong></p>
-                <ol style="margin-left: 20px; color: #cbd5e1; margin-bottom: 15px;">
-                    <li>Připojit se na náš server</li>
-                    <li>Vytvořit si ticket, kde dostanete odkaz na applications</li>
-                </ol>
-                <a href="https://discord.gg/222PrSwPXu" target="_blank" class="btn btn-discord" style="padding: 8px 18px; font-size: 0.9rem;">Připojit se na Server</a>
-                <p class="note">Poznámka: Odkaz nikdy nevyprší</p>
+                
+                <div class="info-block">
+                    <h4>Co jsme zač?</h4>
+                    <p>Jsme virtuální dopravní společnost (vCompany) působící v hraní hry Nids buses & trams na platformě Roblox, zaměřená na provoz linek podle vzoru PMDP a MDPO.</p>
+                </div>
+
+                <div class="info-block">
+                    <h4>Proč děláme vCompany?</h4>
+                    <p>Baví nás městská hromadná doprava a chceme hráčům nabídnout kvalitní zázemí, reálné trasy, pravidelné směny a přátelskou atmosféru v komunitě.</p>
+                </div>
+
+                <div class="info-block">
+                    <h4>Kdo jsme?</h4>
+                    <p>Tým nadšenců do MHD a Robloxu pod vedením zakladatele <strong>sotouszopavy</strong>, který pečuje o hladký chod firmy, směn i Discord serveru.</p>
+                </div>
             </div>
 
+            <!-- Slovensky -->
             <div class="info-card">
                 <h3>🇸🇰 Slovensky</h3>
-                <p>Ahoj, zaujímajú ťa Nids autobusy a električky?</p>
-                <p>Chceš byť súčasťou PMDP & MDPO NBT?</p>
-                <br>
-                <p><strong>Pridaj sa do nášho tímu!</strong></p>
-                <p>Ponúkame:</p>
-                <ul>
-                    <li>Dobrú prácu na smeny</li>
-                    <li>CZ/SK a EN komunitu</li>
-                    <li>Reálne vozidlá s linkami</li>
-                </ul>
-                <p><strong>Čo budeš potrebovať:</strong></p>
-                <ol style="margin-left: 20px; color: #cbd5e1; margin-bottom: 15px;">
-                    <li>Pripojiť sa na náš server</li>
-                    <li>Vytvoriť ticket, kde dostaneš odkaz na aplikácie</li>
-                </ol>
-                <a href="https://discord.gg/222PrSwPXu" target="_blank" class="btn btn-discord" style="padding: 8px 18px; font-size: 0.9rem;">Pripojiť sa na Server</a>
-                <p class="note">Poznámka: Odkaz nikdy nevyprší</p>
+                
+                <div class="info-block">
+                    <h4>Čo sme zač?</h4>
+                    <p>Sme virtuálna dopravná spoločnosť (vCompany) pôsobiaca v hre Nids buses & trams na Robloxu, zamerná na prevádzku liniek podľa vzoru PMDP a MDPO.</p>
+                </div>
+
+                <div class="info-block">
+                    <h4>Prečo robíme vCompany?</h4>
+                    <p>Baví nás mestská hromadná doprava a chceme hráčom ponúknuť kvalitné zázemie, reálne trasy, pravidelné smeny a priateľskú atmosféru v komunite.</p>
+                </div>
+
+                <div class="info-block">
+                    <h4>Kto sme?</h4>
+                    <p>Tím nadšencov do MHD a Robloxu pod vedením zakladateľa <strong>sotouszopavy</strong>, ktorý sa stará o hladký chod firmy, zmien a Discord servera.</p>
+                </div>
             </div>
 
+            <!-- English -->
             <div class="info-card">
                 <h3>🇬🇧 English</h3>
-                <p>Hi, are you interested in Nids buses and trams?</p>
-                <p>Do you want to be part of PMDP & MDPO NBT?</p>
-                <br>
-                <p><strong>Join our team!</strong></p>
-                <p>We offer:</p>
-                <ul>
-                    <li>Good work for shifts</li>
-                    <li>CZ/SK and EN community</li>
-                    <li>Real vehicles with routes</li>
-                </ul>
-                <p><strong>What you will need:</strong></p>
-                <ol style="margin-left: 20px; color: #cbd5e1; margin-bottom: 15px;">
-                    <li>Join our server</li>
-                    <li>Create a ticket, where you will receive a link to the applications</li>
-                </ol>
-                <a href="https://discord.gg/222PrSwPXu" target="_blank" class="btn btn-discord" style="padding: 8px 18px; font-size: 0.9rem;">Join Server</a>
-                <p class="note">Note: The link never expires</p>
-            </div>
-        </div>
+                
+                <div class="info-block">
+                    <h4>Who are we?</h4>
+                    <p>We are a virtual bus company (vCompany) operating within Nids buses & trams on Roblox, focused on running realistic routes based on PMDP and MDPO.</p>
+                </div>
 
-        <div class="fleet-cta">
-            <h2>Náš Vozový Park</h2>
-            <p>Prohlédněte si kompletní seznam autobusů, trolejbusů a tramvají v naší vCompany.</p>
-            <a href="vozovy-park.html" class="btn btn-fleet" style="font-size: 1.1rem; padding: 14px 36px;">Prohlédnout vozový park &rarr;</a>
-    </div>
+                <div class="info-block">
+                    <h4>Why do we run vCompany?</h4>
+                    <p>We love public transit and want to provide players with a great environment, real routes, organized shifts, and a friendly community.</p>
+                </div>
+
+                <div class="info-block">
+                    <h4>Who is behind this?</h4>
+                    <p>A team of transit and Roblox enthusiasts led by the founder <strong>sotouszopavy</strong>, ensuring smooth operations, shift scheduling, and Discord management.</p>
+                </div>
+            </div>
+
+        </div>
 
     </div>
 
