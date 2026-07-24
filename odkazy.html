@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odkazy - PMDP & MDPO NBT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #3b82f6;
+            --accent: #f59e0b;
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: #334155;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e1b4b, #1e3a8a, #0284c7);
+            padding: 50px 20px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .links-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .btn {
+            display: block;
+            padding: 16px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            border: none;
+            text-align: center;
+        }
+
+        /* Discord tlačítko */
+        .btn-discord {
+            background-color: #5865F2;
+            color: white;
+        }
+
+        .btn-discord:hover {
+            background-color: #4752C4;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(88, 101, 242, 0.4);
+        }
+
+        /* Roblox tlačítko */
+        .btn-roblox {
+            background-color: #00A2FF;
+            color: white;
+        }
+
+        .btn-roblox:hover {
+            background-color: #0082CC;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(0, 162, 255, 0.4);
+        }
+
+        /* Zpět tlačítko */
+        .btn-back {
+            background-color: var(--accent);
+            color: #0f172a;
+            margin-top: 10px;
+        }
+
+        .btn-back:hover {
+            background-color: #d97706;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(245, 158, 11, 0.4);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 60px;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        footer strong {
+            color: var(--text-main);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🔗 Důležité Odkazy</h1>
+        <p>Připojte se na náš Discord nebo si zahrájte na našem Roblox serveru</p>
+    </header>
+
+    <div class="container">
+        <div class="links-card">
+            <!-- Discord -->
+            <a href="https://discord.gg/222PrSwPXu" target="_blank" class="btn btn-discord">
+                💬 Discord Server
+            </a>
+
+            <!-- Roblox Private Server -->
+            <a href="https://www.roblox.com/share?code=aa45d86e6349fd4aa4aa204730573b05&type=Server" target="_blank" class="btn btn-roblox">
+                🎮 Roblox Private Server
+            </a>
+
+            <hr style="border: 0; border-top: 1px solid var(--border); margin: 10px 0;">
+
+            <!-- Zpět na domovskou stránku -->
+            <a href="index.html" class="btn btn-back">
+                &larr; Zpět na domovskou stránku
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <p>Created by: <strong>sotouszopavy</strong></p>
+        <p>&copy; vCompany PMDP & MDPO NBT</p>
+    </footer>
+
+</body>
+</html>
